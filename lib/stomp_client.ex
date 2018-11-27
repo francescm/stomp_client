@@ -398,7 +398,7 @@ defmodule StompClient do
     case Parser.parse_message(message) do
       {:ok, parsed} ->
         %{type: type, headers: headers, body: body, remain: remain} = parsed
-        # Logger.debug inspect(parsed, binaries: :as_strings)
+        Logger.debug inspect(parsed, binaries: :as_strings)
 
         if remain == message do
           {:ok, remain}
